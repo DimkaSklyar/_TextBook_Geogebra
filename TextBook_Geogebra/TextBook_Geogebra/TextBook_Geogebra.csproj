@@ -60,6 +60,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AvtorizationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AvtorizationForm.Designer.cs">
+      <DependentUpon>AvtorizationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crypto.cs" />
     <Compile Include="PreloadForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +85,24 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ResetPassForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResetPassForm.Designer.cs">
+      <DependentUpon>ResetPassForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AvtorizationForm.resx">
+      <DependentUpon>AvtorizationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PreloadForm.resx">
       <DependentUpon>PreloadForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -91,6 +122,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ResetPassForm.resx">
+      <DependentUpon>ResetPassForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -106,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <!--sirinie -->
+    <None Include="img\about.jpg" />
     <Content Include="img\icon.ico" />
     <None Include="img\preloader.jpg" />
   </ItemGroup>

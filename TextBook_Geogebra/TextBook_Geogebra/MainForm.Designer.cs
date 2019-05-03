@@ -39,6 +39,7 @@
             this.radMenuItem4 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem5 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem6 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem9 = new Telerik.WinControls.UI.RadMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -68,11 +69,12 @@
             // 
             this.radMenuItem7.Name = "radMenuItem7";
             this.radMenuItem7.Text = "Настройки";
+            this.radMenuItem7.Click += new System.EventHandler(this.radMenuItem7_Click);
             // 
             // radMenuItem8
             // 
             this.radMenuItem8.Name = "radMenuItem8";
-            this.radMenuItem8.Text = " ";
+            this.radMenuItem8.Text = "Выход";
             this.radMenuItem8.Click += new System.EventHandler(this.radMenuItem8_Click);
             // 
             // radMenuItem2
@@ -83,14 +85,17 @@
             // radMenuItem3
             // 
             this.radMenuItem3.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radMenuItem9,
             this.radMenuItem4});
             this.radMenuItem3.Name = "radMenuItem3";
             this.radMenuItem3.Text = "Администрирование";
             // 
             // radMenuItem4
             // 
+            this.radMenuItem4.Enabled = false;
             this.radMenuItem4.Name = "radMenuItem4";
-            this.radMenuItem4.Text = "Смена логина и пароля";
+            this.radMenuItem4.Text = "Смена пароля";
+            this.radMenuItem4.Click += new System.EventHandler(this.radMenuItem4_Click);
             // 
             // radMenuItem5
             // 
@@ -103,6 +108,13 @@
             // 
             this.radMenuItem6.Name = "radMenuItem6";
             this.radMenuItem6.Text = "О программе";
+            this.radMenuItem6.Click += new System.EventHandler(this.radMenuItem6_Click);
+            // 
+            // radMenuItem9
+            // 
+            this.radMenuItem9.Name = "radMenuItem9";
+            this.radMenuItem9.Text = "Войти";
+            this.radMenuItem9.Click += new System.EventHandler(this.radMenuItem9_Click);
             // 
             // MainForm
             // 
@@ -131,14 +143,15 @@
         #endregion
 
         private Telerik.WinControls.Themes.MaterialBlueGreyTheme materialBlueGreyTheme1;
-        private Telerik.WinControls.UI.RadMenu radMenu1;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem1;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem7;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem8;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem2;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem3;
-        private Telerik.WinControls.UI.RadMenuItem radMenuItem4;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem5;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem6;
+        internal Telerik.WinControls.UI.RadMenu radMenu1;
+        internal Telerik.WinControls.UI.RadMenuItem radMenuItem4;
+        internal Telerik.WinControls.UI.RadMenuItem radMenuItem9;
     }
 }
