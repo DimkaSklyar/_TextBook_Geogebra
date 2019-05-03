@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
+using System.Diagnostics;
 
 namespace TextBook_Geogebra
 {
@@ -16,6 +18,8 @@ namespace TextBook_Geogebra
         ResetPassForm resetPassForm;
         SettingsForm settingsForm;
         internal bool singIn = false;
+        string path = Application.StartupPath;
+        string pathApplicationEXE = "";
         public MainForm()
         {
             InitializeComponent();
@@ -92,6 +96,34 @@ namespace TextBook_Geogebra
                 settingsForm = new SettingsForm();
                 settingsForm.Show();
             }
+        }
+
+        private void MainForm_Shown(object sender, EventArgs e)
+        {
+            try
+            {
+                FileStream file = new FileStream(path + "\\config.cfg", FileMode.CreateNew, FileAccess.Write);
+                StreamWriter writer = new StreamWriter(file);
+                writer.WriteLine("path: null");
+                writer.Close();
+                file.Close();
+            }
+            catch (Exception)
+            {
+              
+            }
+        }
+
+        private void radMenuItem2_Click(object sender, EventArgs e)
+        {
+
+            //TODO open application on settings
+            //FileStream file = new FileStream(path + "\\config.cfg", FileMode.OpenOrCreate, FileAccess.Read);
+            //StreamReader reader = new StreamReader(file);
+            //pathApplicationEXE = reader.ReadLine().Substring(6);
+            //reader.Close();
+            //file.Close();
+            //Process.Start(pathApplicationEXE);
         }
     }
 }

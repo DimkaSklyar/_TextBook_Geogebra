@@ -36,10 +36,10 @@
             this.radMenuItem8 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem2 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem3 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem9 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem4 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem5 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem6 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuItem9 = new Telerik.WinControls.UI.RadMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -81,6 +81,7 @@
             // 
             this.radMenuItem2.Name = "radMenuItem2";
             this.radMenuItem2.Text = "Вид";
+            this.radMenuItem2.Click += new System.EventHandler(this.radMenuItem2_Click);
             // 
             // radMenuItem3
             // 
@@ -89,6 +90,12 @@
             this.radMenuItem4});
             this.radMenuItem3.Name = "radMenuItem3";
             this.radMenuItem3.Text = "Администрирование";
+            // 
+            // radMenuItem9
+            // 
+            this.radMenuItem9.Name = "radMenuItem9";
+            this.radMenuItem9.Text = "Войти";
+            this.radMenuItem9.Click += new System.EventHandler(this.radMenuItem9_Click);
             // 
             // radMenuItem4
             // 
@@ -110,15 +117,9 @@
             this.radMenuItem6.Text = "О программе";
             this.radMenuItem6.Click += new System.EventHandler(this.radMenuItem6_Click);
             // 
-            // radMenuItem9
-            // 
-            this.radMenuItem9.Name = "radMenuItem9";
-            this.radMenuItem9.Text = "Войти";
-            this.radMenuItem9.Click += new System.EventHandler(this.radMenuItem9_Click);
-            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1198, 613);
             this.Controls.Add(this.radMenu1);
@@ -133,6 +134,7 @@
             this.Text = "Учебник: Geogebra";
             this.ThemeName = "MaterialBlueGrey";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
+            this.Shown += new System.EventHandler(this.MainForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
