@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TreeView xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" LineStyle="Solid" ItemHeight="36" ThemeName="MaterialBlueGrey" BackColor="White" LineColor="209; 209; 209">
+  <Nodes Name="паропраорп" Expanded="true" Text="паропраорп" Font="Microsoft Sans Serif; 8,25pt">
+    <Nodes Name="внутри" Text="внутри" Font="Microsoft Sans Serif; 8,25pt" />
+    <Nodes Name="2323132" Text="Переименовать" Font="Microsoft Sans Serif; 8,25pt" />
+  </Nodes>
+  <Nodes Name="Главный узел" Expanded="true" Text="Главный узел" Font="Microsoft Sans Serif; 8,25pt">
+    <Nodes Name="Дочерний узел" Text="Дочерний узел" Font="Microsoft Sans Serif; 8,25pt" />
+  </Nodes>
+  <Nodes Name="Ещё один" Text="Ещё один" Font="Microsoft Sans Serif; 8,25pt" />
+</TreeView>

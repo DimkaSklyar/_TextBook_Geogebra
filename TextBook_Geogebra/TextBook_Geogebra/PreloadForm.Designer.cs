@@ -67,6 +67,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PreloadForm";
             this.ThemeName = "MaterialBlueGrey";
+            this.Shown += new System.EventHandler(this.PreloadForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);

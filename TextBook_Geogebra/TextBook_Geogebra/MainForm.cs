@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
+using Word = Microsoft.Office.Interop.Word;
+using Application = System.Windows.Forms.Application;
 
 namespace TextBook_Geogebra
 {
@@ -17,12 +19,74 @@ namespace TextBook_Geogebra
         AboutForm aboutForm;
         ResetPassForm resetPassForm;
         SettingsForm settingsForm;
+        AddNodeForm addNodeForm;
+        RenameForm renameForm;
         internal bool singIn = false;
         string path = Application.StartupPath;
         string pathApplicationEXE = "";
+        
+        
         public MainForm()
         {
             InitializeComponent();
+            addMenuItem.Click += AddMenuItem_Click;
+            editMenuItem.Click += EditMenuItem_Click;
+            renameMenuItem.Click += RenameMenuItem_Click;
+        }
+
+        private void RenameMenuItem_Click(object sender, EventArgs e)
+        {
+            if (renameForm == null)
+            {
+                renameForm = new RenameForm(this);
+                renameForm.Show();
+            }
+            else if (renameForm.IsDisposed)
+            {
+                renameForm = new RenameForm(this);
+                renameForm.Show();
+            }
+            this.Enabled = false;
+        }
+
+        private void EditMenuItem_Click(object sender, EventArgs e)
+        {
+            var selectNode = radTreeView1.SelectedNode;
+            if (selectNode != null)
+            {
+                try
+                {
+
+                    Word.Application word = new Word.Application();
+                    word.Visible = true;
+                    word.Documents.Open(path + "\\GeogebraFiles\\" + selectNode.Text + ".html");
+                    //word.Documents.OpenNoRepairDialog(path + "\\GeogebraFiles\\" + selectNode.Text + ".html");
+                    
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ошибка редактирования", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Не выбран не один узел для редактирования", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+            }
+            
+        }
+
+        private void AddMenuItem_Click(object sender, EventArgs e)
+        {
+            if (addNodeForm == null)
+            {
+                addNodeForm = new AddNodeForm(this);
+                addNodeForm.Show();
+            } else if (addNodeForm.IsDisposed)
+            {
+                addNodeForm = new AddNodeForm(this);
+                addNodeForm.Show();
+            }
         }
 
         private void radMenuItem8_Click(object sender, EventArgs e)
@@ -112,6 +176,28 @@ namespace TextBook_Geogebra
             {
               
             }
+            Directory.CreateDirectory(path + "\\GeogebraFiles");
+
+            FileStream reader = new FileStream(path + "\\tree.lst", FileMode.OpenOrCreate, FileAccess.Read);
+            try
+            {
+                radTreeView1.LoadXML(reader);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Структура учебника повреждена или не существует! Если происходит создание нового учебника, проигнорируйте это сообщение.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                radTreeView1.Nodes.Clear();
+            }
+
+            reader.Close();
+            try
+            {
+                radTreeView1.SelectedNode = radTreeView1.Nodes[0];
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private void radMenuItem2_Click(object sender, EventArgs e)
@@ -124,6 +210,41 @@ namespace TextBook_Geogebra
             //reader.Close();
             //file.Close();
             //Process.Start(pathApplicationEXE);
+        }
+
+        private void radTreeView1_ContextMenuOpening(object sender, Telerik.WinControls.UI.TreeViewContextMenuOpeningEventArgs e)
+        {
+            radContextMenu1.Show();
+        }
+
+        private void radTreeView1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                Point point = new Point(e.X, e.Y);
+                radContextMenu1.Show(radTreeView1, point);
+            }
+        }
+
+        private void radTreeView1_Click(object sender, EventArgs e)
+        {
+            //radTreeView1.SelectedNode = null;
+        }
+
+        private void radTreeView1_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radTreeView1_NodeMouseClick(object sender, Telerik.WinControls.UI.RadTreeViewEventArgs e)
+        {
+            radTreeView1.SelectedNode = e.Node;
+        }
+
+        private void radTreeView1_SelectedNodeChanged(object sender, Telerik.WinControls.UI.RadTreeViewEventArgs e)
+        {
+            Uri uri = new Uri(path + "\\GeogebraFiles\\" + e.Node.Text + ".html");
+            webBrowser1.Url = uri;
         }
     }
 }

@@ -44,3 +44,6 @@ C:\_work\_TextBook_Geogebra\TextBook_Geogebra\TextBook_Geogebra\obj\x86\Debug\Te
 C:\_work\_TextBook_Geogebra\TextBook_Geogebra\TextBook_Geogebra\obj\x86\Debug\TextBook_Geogebra.AboutForm.resources
 C:\_work\_TextBook_Geogebra\TextBook_Geogebra\TextBook_Geogebra\obj\x86\Debug\TextBook_Geogebra.ResetPassForm.resources
 C:\_work\_TextBook_Geogebra\TextBook_Geogebra\TextBook_Geogebra\obj\x86\Debug\TextBook_Geogebra.SettingsForm.resources
+C:\_work\_TextBook_Geogebra\TextBook_Geogebra\TextBook_Geogebra\obj\x86\Debug\TextBook_Geogebra.AddNodeForm.resources
+C:\_work\_TextBook_Geogebra\TextBook_Geogebra\TextBook_Geogebra\obj\x86\Debug\TextBook_Geogebra.csproj.ResolveComReference.cache
+C:\_work\_TextBook_Geogebra\TextBook_Geogebra\TextBook_Geogebra\obj\x86\Debug\TextBook_Geogebra.RenameForm.resources
