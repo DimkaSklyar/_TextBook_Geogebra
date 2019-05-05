@@ -22,6 +22,7 @@ namespace TextBook_Geogebra
         AddNodeForm addNodeForm;
         RenameForm renameForm;
         internal bool singIn = false;
+        string style = "zoom: 100%;";
         string path = Application.StartupPath;
         string pathApplicationEXE = "";
         
@@ -32,6 +33,25 @@ namespace TextBook_Geogebra
             addMenuItem.Click += AddMenuItem_Click;
             editMenuItem.Click += EditMenuItem_Click;
             renameMenuItem.Click += RenameMenuItem_Click;
+            removeMenuItem.Click += RemoveMenuItem_Click;
+        }
+
+        private void RemoveMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Вы уверены что хотите удалить страницу учебника: " + radTreeView1.SelectedNode.Text + "?", "Внимание", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            if (result == DialogResult.OK)
+            {
+                FileInfo file = new FileInfo(Application.StartupPath + "\\GeogebraFiles\\" + radTreeView1.SelectedNode.Text + ".html");
+                if (file.Exists)
+                {
+                    file.Delete();
+                }
+                radTreeView1.SelectedNode.Remove();
+                FileStream writer = new FileStream(Application.StartupPath + "\\tree.lst", FileMode.Create, FileAccess.Write);
+                radTreeView1.SaveXML(writer);
+                writer.Close();
+
+            }
         }
 
         private void RenameMenuItem_Click(object sender, EventArgs e)
@@ -245,6 +265,41 @@ namespace TextBook_Geogebra
         {
             Uri uri = new Uri(path + "\\GeogebraFiles\\" + e.Node.Text + ".html");
             webBrowser1.Url = uri;
+        }
+
+        private void radMenuItem10_Click(object sender, EventArgs e)
+        {
+            webBrowser1.Document.Body.Style = "zoom: 100%;";
+            style = "zoom: 100%;";
+        }
+
+        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            webBrowser1.Document.Body.Style = style;
+        }
+
+        private void radMenuItem11_Click(object sender, EventArgs e)
+        {
+            webBrowser1.Document.Body.Style = "zoom: 125%;";
+
+            style = "zoom: 125%;";
+
+        }
+
+        private void radMenuItem12_Click(object sender, EventArgs e)
+        {
+            webBrowser1.Document.Body.Style = "zoom: 150%;";
+
+            style = "zoom: 150%;";
+
+        }
+
+        private void radMenuItem13_Click(object sender, EventArgs e)
+        {
+            webBrowser1.Document.Body.Style = "zoom: 200%;";
+
+            style = "zoom: 200%;";
+
         }
     }
 }

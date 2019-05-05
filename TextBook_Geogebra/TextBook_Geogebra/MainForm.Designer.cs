@@ -43,22 +43,26 @@
             this.radMenuItem6 = new Telerik.WinControls.UI.RadMenuItem();
             this.radSplitContainer1 = new Telerik.WinControls.UI.RadSplitContainer();
             this.splitPanel1 = new Telerik.WinControls.UI.SplitPanel();
-            this.splitPanel2 = new Telerik.WinControls.UI.SplitPanel();
             this.radTreeView1 = new Telerik.WinControls.UI.RadTreeView();
+            this.splitPanel2 = new Telerik.WinControls.UI.SplitPanel();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.radContextMenu1 = new Telerik.WinControls.UI.RadContextMenu(this.components);
             this.addMenuItem = new Telerik.WinControls.UI.RadMenuItem();
             this.renameMenuItem = new Telerik.WinControls.UI.RadMenuItem();
-            this.removeMenuItem = new Telerik.WinControls.UI.RadMenuItem();
             this.editMenuItem = new Telerik.WinControls.UI.RadMenuItem();
+            this.removeMenuItem = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem10 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem11 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem12 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem13 = new Telerik.WinControls.UI.RadMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radSplitContainer1)).BeginInit();
             this.radSplitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitPanel1)).BeginInit();
             this.splitPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radTreeView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitPanel2)).BeginInit();
             this.splitPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radTreeView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,6 +101,11 @@
             // 
             // radMenuItem2
             // 
+            this.radMenuItem2.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radMenuItem10,
+            this.radMenuItem11,
+            this.radMenuItem12,
+            this.radMenuItem13});
             this.radMenuItem2.Name = "radMenuItem2";
             this.radMenuItem2.Text = "Вид";
             this.radMenuItem2.Click += new System.EventHandler(this.radMenuItem2_Click);
@@ -169,29 +178,12 @@
             this.splitPanel1.Text = "splitPanel1";
             this.splitPanel1.ThemeName = "MaterialBlueGrey";
             // 
-            // splitPanel2
-            // 
-            this.splitPanel2.Controls.Add(this.webBrowser1);
-            this.splitPanel2.Location = new System.Drawing.Point(216, 0);
-            this.splitPanel2.Name = "splitPanel2";
-            // 
-            // 
-            // 
-            this.splitPanel2.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.splitPanel2.Size = new System.Drawing.Size(982, 576);
-            this.splitPanel2.SizeInfo.AutoSizeScale = new System.Drawing.SizeF(0.3252101F, 0F);
-            this.splitPanel2.SizeInfo.SplitterCorrection = new System.Drawing.Size(387, 0);
-            this.splitPanel2.TabIndex = 1;
-            this.splitPanel2.TabStop = false;
-            this.splitPanel2.Text = "splitPanel2";
-            this.splitPanel2.ThemeName = "MaterialBlueGrey";
-            // 
             // radTreeView1
             // 
             this.radTreeView1.BackColor = System.Drawing.Color.White;
             this.radTreeView1.Cursor = System.Windows.Forms.Cursors.Default;
             this.radTreeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radTreeView1.Font = new System.Drawing.Font("Roboto", 10.5F);
+            this.radTreeView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F);
             this.radTreeView1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.radTreeView1.ItemHeight = 36;
             this.radTreeView1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
@@ -209,6 +201,23 @@
             this.radTreeView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.radTreeView1_MouseDown);
             this.radTreeView1.MouseLeave += new System.EventHandler(this.radTreeView1_MouseLeave);
             // 
+            // splitPanel2
+            // 
+            this.splitPanel2.Controls.Add(this.webBrowser1);
+            this.splitPanel2.Location = new System.Drawing.Point(216, 0);
+            this.splitPanel2.Name = "splitPanel2";
+            // 
+            // 
+            // 
+            this.splitPanel2.RootElement.MinSize = new System.Drawing.Size(25, 25);
+            this.splitPanel2.Size = new System.Drawing.Size(982, 576);
+            this.splitPanel2.SizeInfo.AutoSizeScale = new System.Drawing.SizeF(0.3252101F, 0F);
+            this.splitPanel2.SizeInfo.SplitterCorrection = new System.Drawing.Size(387, 0);
+            this.splitPanel2.TabIndex = 1;
+            this.splitPanel2.TabStop = false;
+            this.splitPanel2.Text = "splitPanel2";
+            this.splitPanel2.ThemeName = "MaterialBlueGrey";
+            // 
             // webBrowser1
             // 
             this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -217,6 +226,7 @@
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(982, 576);
             this.webBrowser1.TabIndex = 0;
+            this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             // 
             // radContextMenu1
             // 
@@ -237,15 +247,39 @@
             this.renameMenuItem.Name = "renameMenuItem";
             this.renameMenuItem.Text = "Переименовать";
             // 
+            // editMenuItem
+            // 
+            this.editMenuItem.Name = "editMenuItem";
+            this.editMenuItem.Text = "Редактировать";
+            // 
             // removeMenuItem
             // 
             this.removeMenuItem.Name = "removeMenuItem";
             this.removeMenuItem.Text = "Удалить";
             // 
-            // editMenuItem
+            // radMenuItem10
             // 
-            this.editMenuItem.Name = "editMenuItem";
-            this.editMenuItem.Text = "Редактировать";
+            this.radMenuItem10.Name = "radMenuItem10";
+            this.radMenuItem10.Text = "Масштаб 100%";
+            this.radMenuItem10.Click += new System.EventHandler(this.radMenuItem10_Click);
+            // 
+            // radMenuItem11
+            // 
+            this.radMenuItem11.Name = "radMenuItem11";
+            this.radMenuItem11.Text = "Масштаб 125%";
+            this.radMenuItem11.Click += new System.EventHandler(this.radMenuItem11_Click);
+            // 
+            // radMenuItem12
+            // 
+            this.radMenuItem12.Name = "radMenuItem12";
+            this.radMenuItem12.Text = "Машстаб 150%";
+            this.radMenuItem12.Click += new System.EventHandler(this.radMenuItem12_Click);
+            // 
+            // radMenuItem13
+            // 
+            this.radMenuItem13.Name = "radMenuItem13";
+            this.radMenuItem13.Text = "Масштаб 200%";
+            this.radMenuItem13.Click += new System.EventHandler(this.radMenuItem13_Click);
             // 
             // MainForm
             // 
@@ -271,9 +305,9 @@
             this.radSplitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitPanel1)).EndInit();
             this.splitPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radTreeView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitPanel2)).EndInit();
             this.splitPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radTreeView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -303,5 +337,9 @@
         private Telerik.WinControls.UI.RadMenuItem removeMenuItem;
         internal Telerik.WinControls.UI.RadTreeView radTreeView1;
         private Telerik.WinControls.UI.RadMenuItem editMenuItem;
+        private Telerik.WinControls.UI.RadMenuItem radMenuItem10;
+        private Telerik.WinControls.UI.RadMenuItem radMenuItem11;
+        private Telerik.WinControls.UI.RadMenuItem radMenuItem12;
+        private Telerik.WinControls.UI.RadMenuItem radMenuItem13;
     }
 }
