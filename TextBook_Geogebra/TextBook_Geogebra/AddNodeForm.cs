@@ -28,7 +28,9 @@ namespace TextBook_Geogebra
                 var selectNode = mainForm.radTreeView1.SelectedNode;
                 try
                 {
-                    FileStream file = new FileStream(path + "\\GeogebraFiles\\" + radTextBox1.Text + ".html", FileMode.CreateNew, FileAccess.ReadWrite);
+                    string template = path + "\\GeogebraFiles\\template.html";
+                    string newNode = path + "\\GeogebraFiles\\" + radTextBox1.Text + ".html";
+                    File.Copy(template, newNode);
                     if (selectNode == null)
                     {
                         mainForm.radTreeView1.Nodes.Add(radTextBox1.Text);

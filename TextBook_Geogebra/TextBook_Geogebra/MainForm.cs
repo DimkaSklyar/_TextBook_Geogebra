@@ -11,6 +11,7 @@ using System.Diagnostics;
 using Word = Microsoft.Office.Interop.Word;
 using Application = System.Windows.Forms.Application;
 
+
 namespace TextBook_Geogebra
 {
     public partial class MainForm : Telerik.WinControls.UI.RadForm
@@ -25,6 +26,7 @@ namespace TextBook_Geogebra
         string style = "zoom: 100%;";
         string path = Application.StartupPath;
         string pathApplicationEXE = "";
+        string selectNode = "";
         
         
         public MainForm()
@@ -41,6 +43,14 @@ namespace TextBook_Geogebra
             DialogResult result = MessageBox.Show("Вы уверены что хотите удалить страницу учебника: " + radTreeView1.SelectedNode.Text + "?", "Внимание", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
             if (result == DialogResult.OK)
             {
+                try
+                {
+                    Directory.Delete(path + "\\GeogebraFiles\\" + radTreeView1.SelectedNode.Text + ".files", true);
+                }
+                catch (Exception)
+                {
+
+                }
                 FileInfo file = new FileInfo(Application.StartupPath + "\\GeogebraFiles\\" + radTreeView1.SelectedNode.Text + ".html");
                 if (file.Exists)
                 {
@@ -184,6 +194,7 @@ namespace TextBook_Geogebra
 
         private void MainForm_Shown(object sender, EventArgs e)
         {
+            
             try
             {
                 FileStream file = new FileStream(path + "\\config.cfg", FileMode.CreateNew, FileAccess.Write);
@@ -237,19 +248,39 @@ namespace TextBook_Geogebra
             radContextMenu1.Show();
         }
 
+        private void radTreeView1_Click(object sender, EventArgs e)
+        {
+            
+        }
         private void radTreeView1_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Right)
+            if (this.radTreeView1.GetNodeAt(e.X, e.Y) == null)
             {
-                Point point = new Point(e.X, e.Y);
-                radContextMenu1.Show(radTreeView1, point);
+                this.radTreeView1.SelectedNode = null;
+            }
+            if (e.Button == MouseButtons.Right && singIn)
+            {
+                if (radTreeView1.SelectedNode == null)
+                {
+                    removeMenuItem.Enabled = false;
+                    renameMenuItem.Enabled = false;
+                    editMenuItem.Enabled = false;
+                    Point point = new Point(e.X, e.Y);
+                    radContextMenu1.Show(radTreeView1, point);
+                }
+                else
+                {
+                    removeMenuItem.Enabled = true;
+                    renameMenuItem.Enabled = true;
+                    editMenuItem.Enabled = true;
+                    Point point = new Point(e.X, e.Y);
+                    radContextMenu1.Show(radTreeView1, point);
+                }
+                
             }
         }
 
-        private void radTreeView1_Click(object sender, EventArgs e)
-        {
-            //radTreeView1.SelectedNode = null;
-        }
+ 
 
         private void radTreeView1_MouseLeave(object sender, EventArgs e)
         {
@@ -258,13 +289,22 @@ namespace TextBook_Geogebra
 
         private void radTreeView1_NodeMouseClick(object sender, Telerik.WinControls.UI.RadTreeViewEventArgs e)
         {
+            //selectNode = e.Node.Text;
             radTreeView1.SelectedNode = e.Node;
         }
 
         private void radTreeView1_SelectedNodeChanged(object sender, Telerik.WinControls.UI.RadTreeViewEventArgs e)
         {
-            Uri uri = new Uri(path + "\\GeogebraFiles\\" + e.Node.Text + ".html");
-            webBrowser1.Url = uri;
+            try
+            {
+                Uri uri = new Uri(path + "\\GeogebraFiles\\" + e.Node.Text + ".html");
+                webBrowser1.Url = uri;
+            }
+            catch (Exception)
+            {
+
+            }
+
         }
 
         private void radMenuItem10_Click(object sender, EventArgs e)
@@ -299,6 +339,12 @@ namespace TextBook_Geogebra
             webBrowser1.Document.Body.Style = "zoom: 200%;";
 
             style = "zoom: 200%;";
+
+        }
+
+
+        private void radTreeView1_MouseUp(object sender, MouseEventArgs e)
+        {
 
         }
     }

@@ -36,6 +36,10 @@
             this.radMenuItem7 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem8 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem2 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem10 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem11 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem12 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem13 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem3 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem9 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem4 = new Telerik.WinControls.UI.RadMenuItem();
@@ -51,10 +55,6 @@
             this.renameMenuItem = new Telerik.WinControls.UI.RadMenuItem();
             this.editMenuItem = new Telerik.WinControls.UI.RadMenuItem();
             this.removeMenuItem = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuItem10 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuItem11 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuItem12 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuItem13 = new Telerik.WinControls.UI.RadMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radSplitContainer1)).BeginInit();
             this.radSplitContainer1.SuspendLayout();
@@ -109,6 +109,30 @@
             this.radMenuItem2.Name = "radMenuItem2";
             this.radMenuItem2.Text = "Вид";
             this.radMenuItem2.Click += new System.EventHandler(this.radMenuItem2_Click);
+            // 
+            // radMenuItem10
+            // 
+            this.radMenuItem10.Name = "radMenuItem10";
+            this.radMenuItem10.Text = "Масштаб 100%";
+            this.radMenuItem10.Click += new System.EventHandler(this.radMenuItem10_Click);
+            // 
+            // radMenuItem11
+            // 
+            this.radMenuItem11.Name = "radMenuItem11";
+            this.radMenuItem11.Text = "Масштаб 125%";
+            this.radMenuItem11.Click += new System.EventHandler(this.radMenuItem11_Click);
+            // 
+            // radMenuItem12
+            // 
+            this.radMenuItem12.Name = "radMenuItem12";
+            this.radMenuItem12.Text = "Машстаб 150%";
+            this.radMenuItem12.Click += new System.EventHandler(this.radMenuItem12_Click);
+            // 
+            // radMenuItem13
+            // 
+            this.radMenuItem13.Name = "radMenuItem13";
+            this.radMenuItem13.Text = "Масштаб 200%";
+            this.radMenuItem13.Click += new System.EventHandler(this.radMenuItem13_Click);
             // 
             // radMenuItem3
             // 
@@ -183,7 +207,7 @@
             this.radTreeView1.BackColor = System.Drawing.Color.White;
             this.radTreeView1.Cursor = System.Windows.Forms.Cursors.Default;
             this.radTreeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radTreeView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F);
+            this.radTreeView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radTreeView1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.radTreeView1.ItemHeight = 36;
             this.radTreeView1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
@@ -200,6 +224,11 @@
             this.radTreeView1.Click += new System.EventHandler(this.radTreeView1_Click);
             this.radTreeView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.radTreeView1_MouseDown);
             this.radTreeView1.MouseLeave += new System.EventHandler(this.radTreeView1_MouseLeave);
+            this.radTreeView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.radTreeView1_MouseUp);
+            ((Telerik.WinControls.UI.RadTreeViewElement)(this.radTreeView1.GetChildAt(0))).ItemHeight = 36;
+            ((Telerik.WinControls.UI.RadTreeViewElement)(this.radTreeView1.GetChildAt(0))).LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            ((Telerik.WinControls.UI.RadTreeViewElement)(this.radTreeView1.GetChildAt(0))).LineStyle = Telerik.WinControls.UI.TreeLineStyle.Solid;
+            ((Telerik.WinControls.UI.RadTreeViewElement)(this.radTreeView1.GetChildAt(0))).Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             // 
             // splitPanel2
             // 
@@ -221,6 +250,7 @@
             // webBrowser1
             // 
             this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.IsWebBrowserContextMenuEnabled = false;
             this.webBrowser1.Location = new System.Drawing.Point(0, 0);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
@@ -257,30 +287,6 @@
             this.removeMenuItem.Name = "removeMenuItem";
             this.removeMenuItem.Text = "Удалить";
             // 
-            // radMenuItem10
-            // 
-            this.radMenuItem10.Name = "radMenuItem10";
-            this.radMenuItem10.Text = "Масштаб 100%";
-            this.radMenuItem10.Click += new System.EventHandler(this.radMenuItem10_Click);
-            // 
-            // radMenuItem11
-            // 
-            this.radMenuItem11.Name = "radMenuItem11";
-            this.radMenuItem11.Text = "Масштаб 125%";
-            this.radMenuItem11.Click += new System.EventHandler(this.radMenuItem11_Click);
-            // 
-            // radMenuItem12
-            // 
-            this.radMenuItem12.Name = "radMenuItem12";
-            this.radMenuItem12.Text = "Машстаб 150%";
-            this.radMenuItem12.Click += new System.EventHandler(this.radMenuItem12_Click);
-            // 
-            // radMenuItem13
-            // 
-            this.radMenuItem13.Name = "radMenuItem13";
-            this.radMenuItem13.Text = "Масштаб 200%";
-            this.radMenuItem13.Click += new System.EventHandler(this.radMenuItem13_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,7 +302,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Учебник: Geogebra";
+            this.Text = "Электронный практикум: Geogebra";
             this.ThemeName = "MaterialBlueGrey";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Shown += new System.EventHandler(this.MainForm_Shown);
