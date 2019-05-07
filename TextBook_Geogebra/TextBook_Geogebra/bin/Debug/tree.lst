@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <TreeView xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" LineStyle="Solid" ItemHeight="36" ThemeName="MaterialBlueGrey" BackColor="White" LineColor="209; 209; 209">
   <Nodes Name="Раздел 1" Text="Раздел 1" Font="Microsoft Sans Serif; 8,25pt" />
-  <Nodes Name="Раздел 2" Text="Раздел 2" Font="(отсутствует)" />
+  <Nodes Name="Раздел 2" Text="Раздел 2" Font="Microsoft Sans Serif; 8,25pt" />
+  <Nodes Name="Раздел 3" Expanded="true" Text="Раздел 3" Font="(отсутствует)" />
 </TreeView>
