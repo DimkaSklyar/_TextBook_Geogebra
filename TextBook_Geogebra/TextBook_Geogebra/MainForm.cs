@@ -147,8 +147,8 @@ namespace TextBook_Geogebra
             else
             {
                 singIn = false;
-                radMenuItem9.Text = "Войти";
-                radMenuItem4.Enabled = false;
+                radMenuItem15.Text = "Войти";
+                radMenuItem16.Enabled = false;
             }
 
         }
@@ -234,13 +234,7 @@ namespace TextBook_Geogebra
         private void radMenuItem2_Click(object sender, EventArgs e)
         {
 
-            //TODO open application on settings
-            //FileStream file = new FileStream(path + "\\config.cfg", FileMode.OpenOrCreate, FileAccess.Read);
-            //StreamReader reader = new StreamReader(file);
-            //pathApplicationEXE = reader.ReadLine().Substring(6);
-            //reader.Close();
-            //file.Close();
-            //Process.Start(pathApplicationEXE);
+
         }
 
         private void radTreeView1_ContextMenuOpening(object sender, Telerik.WinControls.UI.TreeViewContextMenuOpeningEventArgs e)
@@ -297,13 +291,24 @@ namespace TextBook_Geogebra
         {
             try
             {
+
                 Uri uri = new Uri(path + "\\GeogebraFiles\\" + e.Node.Text + ".html");
                 webBrowser1.Url = uri;
+                radButton1.Visible = false;
+                if (radTreeView1.SelectedNode.Parent.Text.ToUpper() == "Практические задания".ToUpper())
+                {
+                    radButton1.Visible = true;
+                }
+                else
+                {
+                    radButton1.Visible = false;
+                }
             }
             catch (Exception)
             {
 
             }
+
 
         }
 
@@ -347,5 +352,31 @@ namespace TextBook_Geogebra
         {
 
         }
+
+        private void radButton1_Click(object sender, EventArgs e)
+        {
+            //TODO open application on settings
+            FileStream file = new FileStream(path + "\\config.cfg", FileMode.OpenOrCreate, FileAccess.Read);
+            StreamReader reader = new StreamReader(file);
+            pathApplicationEXE = reader.ReadLine().Substring(6);
+            reader.Close();
+            file.Close();
+            try
+            {
+                Process.Start(pathApplicationEXE);
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Ошибка запуска GeoGebra. Убедитесь, что путь Настройках программы, указан правильно!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
+            
+        }
+
+
+
+
+
+
     }
 }

@@ -27,16 +27,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutForm));
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.radLabelProductName = new Telerik.WinControls.UI.RadLabel();
             this.radTextBoxDescription = new Telerik.WinControls.UI.RadTextBox();
             this.okRadButton = new Telerik.WinControls.UI.RadButton();
-            this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabelProductName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radTextBoxDescription)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.okRadButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,6 +63,18 @@
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel.Size = new System.Drawing.Size(392, 267);
             this.tableLayoutPanel.TabIndex = 0;
+            // 
+            // logoPictureBox
+            // 
+            this.logoPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.logoPictureBox.Image = global::TextBook_Geogebra.Properties.Resources.about;
+            this.logoPictureBox.Location = new System.Drawing.Point(3, 3);
+            this.logoPictureBox.Name = "logoPictureBox";
+            this.tableLayoutPanel.SetRowSpan(this.logoPictureBox, 3);
+            this.logoPictureBox.Size = new System.Drawing.Size(123, 261);
+            this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.logoPictureBox.TabIndex = 12;
+            this.logoPictureBox.TabStop = false;
             // 
             // radLabelProductName
             // 
@@ -95,13 +108,16 @@
             this.radTextBoxDescription.Size = new System.Drawing.Size(254, 184);
             this.radTextBoxDescription.TabIndex = 23;
             this.radTextBoxDescription.TabStop = false;
-            this.radTextBoxDescription.Text = "Программа учебник Geogebra предназначенный для обучения студентов.";
+            this.radTextBoxDescription.Text = "Учебный практикум по Geogebra, предназначенный для обучения студентов, а так же п" +
+    "роведения практических занятий.";
             this.radTextBoxDescription.ThemeName = "MaterialBlueGrey";
             // 
             // okRadButton
             // 
             this.okRadButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.okRadButton.BackColor = System.Drawing.Color.Transparent;
             this.okRadButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.okRadButton.ForeColor = System.Drawing.Color.White;
             this.okRadButton.Location = new System.Drawing.Point(314, 231);
             this.okRadButton.Name = "okRadButton";
             this.okRadButton.Size = new System.Drawing.Size(75, 33);
@@ -109,18 +125,6 @@
             this.okRadButton.Text = "&OK";
             this.okRadButton.ThemeName = "MaterialBlueGrey";
             this.okRadButton.Click += new System.EventHandler(this.okRadButton_Click);
-            // 
-            // logoPictureBox
-            // 
-            this.logoPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.logoPictureBox.Image = global::TextBook_Geogebra.Properties.Resources.about;
-            this.logoPictureBox.Location = new System.Drawing.Point(3, 3);
-            this.logoPictureBox.Name = "logoPictureBox";
-            this.tableLayoutPanel.SetRowSpan(this.logoPictureBox, 3);
-            this.logoPictureBox.Size = new System.Drawing.Size(123, 261);
-            this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.logoPictureBox.TabIndex = 12;
-            this.logoPictureBox.TabStop = false;
             // 
             // AboutForm
             // 
@@ -130,6 +134,7 @@
             this.ClientSize = new System.Drawing.Size(410, 285);
             this.Controls.Add(this.tableLayoutPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AboutForm";
@@ -141,15 +146,15 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AboutForm";
+            this.Text = "О программе";
             this.ThemeName = "MaterialBlueGrey";
             this.TopMost = true;
             this.tableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabelProductName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radTextBoxDescription)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.okRadButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

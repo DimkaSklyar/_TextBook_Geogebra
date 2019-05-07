@@ -26,8 +26,8 @@ namespace TextBook_Geogebra
             if (autorization[0] == radTextBox1.Text && autorization[1] == radTextBox2.Text)
             {
                 signIn = true;
-                mainForm.radMenuItem4.Enabled = true;
-                mainForm.radMenuItem9.Text = "Выйти";
+                mainForm.radMenuItem16.Enabled = true;
+                mainForm.radMenuItem15.Text = "Выйти";
                 mainForm.singIn = signIn;
                 streamReader.Close();
                 Close();

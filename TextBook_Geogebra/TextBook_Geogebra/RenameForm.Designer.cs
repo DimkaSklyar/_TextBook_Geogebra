@@ -43,6 +43,7 @@
             this.radTextBox1.Size = new System.Drawing.Size(372, 36);
             this.radTextBox1.TabIndex = 0;
             this.radTextBox1.ThemeName = "MaterialBlueGrey";
+            this.radTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.radTextBox1_KeyPress);
             // 
             // radButton1
             // 

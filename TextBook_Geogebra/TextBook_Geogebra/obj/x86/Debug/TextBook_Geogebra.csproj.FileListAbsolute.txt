@@ -47,3 +47,14 @@ C:\_work\_TextBook_Geogebra\TextBook_Geogebra\TextBook_Geogebra\obj\x86\Debug\Te
 C:\_work\_TextBook_Geogebra\TextBook_Geogebra\TextBook_Geogebra\obj\x86\Debug\TextBook_Geogebra.AddNodeForm.resources
 C:\_work\_TextBook_Geogebra\TextBook_Geogebra\TextBook_Geogebra\obj\x86\Debug\TextBook_Geogebra.csproj.ResolveComReference.cache
 C:\_work\_TextBook_Geogebra\TextBook_Geogebra\TextBook_Geogebra\obj\x86\Debug\TextBook_Geogebra.RenameForm.resources
+D:\_work\_TextBook_Geogebra\TextBook_Geogebra\TextBook_Geogebra\obj\x86\Debug\TextBook_Geogebra.csproj.ResolveComReference.cache
+D:\_work\_TextBook_Geogebra\TextBook_Geogebra\TextBook_Geogebra\obj\x86\Debug\TextBook_Geogebra.AboutForm.resources
+D:\_work\_TextBook_Geogebra\TextBook_Geogebra\TextBook_Geogebra\obj\x86\Debug\TextBook_Geogebra.AddNodeForm.resources
+D:\_work\_TextBook_Geogebra\TextBook_Geogebra\TextBook_Geogebra\obj\x86\Debug\TextBook_Geogebra.AvtorizationForm.resources
+D:\_work\_TextBook_Geogebra\TextBook_Geogebra\TextBook_Geogebra\obj\x86\Debug\TextBook_Geogebra.RenameForm.resources
+D:\_work\_TextBook_Geogebra\TextBook_Geogebra\TextBook_Geogebra\obj\x86\Debug\TextBook_Geogebra.ResetPassForm.resources
+D:\_work\_TextBook_Geogebra\TextBook_Geogebra\TextBook_Geogebra\obj\x86\Debug\TextBook_Geogebra.SettingsForm.resources
+D:\_work\_TextBook_Geogebra\TextBook_Geogebra\TextBook_Geogebra\bin\Debug\Telerik.WinControls.Themes.MaterialTeal.dll
+D:\_work\_TextBook_Geogebra\TextBook_Geogebra\TextBook_Geogebra\bin\Debug\Telerik.WinControls.Themes.VisualStudio2012Dark.dll
+D:\_work\_TextBook_Geogebra\TextBook_Geogebra\TextBook_Geogebra\bin\Debug\Telerik.WinControls.Themes.Material.dll
+D:\_work\_TextBook_Geogebra\TextBook_Geogebra\TextBook_Geogebra\bin\Debug\Telerik.WinControls.Themes.VisualStudio2012Light.dll
